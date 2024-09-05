@@ -28,4 +28,8 @@ public class Puzzle
     public void makeVisible(){
         System.out.println("Here is the makeVisible method");
     }
+    
+    public void titl(){
+        System.out.println("tilt");    
+    }
 }
