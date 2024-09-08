@@ -7,8 +7,6 @@ import java.awt.*;
  * @version 1.0  (15 July 2000)()
  */
 
-
- 
 public class Rectangle{
 
     public static int EDGES = 4;
@@ -20,18 +18,27 @@ public class Rectangle{
     private String color;
     private boolean isVisible;
 
+
     /**
      * Create a new rectangle at default position with default color.
      */
     public Rectangle(){
-        height = 30;
-        width = 40;
+        height = 100;
+        width = 100;
         xPosition = 70;
         yPosition = 15;
         color = "magenta";
         isVisible = false;
     }
     
+    public Rectangle(int height, int width, int xPosition, int yPosition, String color) {
+        this.height = height;
+        this.width = width;
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
+        this.color = color;
+        this.isVisible = false;
+    }
 
     /**
      * Make this rectangle visible. If it was already visible, do nothing.
@@ -76,25 +83,15 @@ public class Rectangle{
     public void moveDown(){
         moveVertical(20);
     }
-
-    /**
-     * Move the rectangle horizontally.
-     * @param distance the desired distance in pixels
-     */
-    public void moveHorizontal(int distance){
-        erase();
+    
+    public void moveHorizontal(int distance) {
         xPosition += distance;
-        draw();
+        updatePosition(); // Llama a un método que actualizará gráficamente la posición si lo necesitas
     }
-
-    /**
-     * Move the rectangle vertically.
-     * @param distance the desired distance in pixels
-     */
-    public void moveVertical(int distance){
-        erase();
+    
+    public void moveVertical(int distance) {
         yPosition += distance;
-        draw();
+        updatePosition(); // Llama a un método que actualizará gráficamente la posición si lo necesitas
     }
 
     /**
@@ -166,9 +163,7 @@ public class Rectangle{
     private void draw() {
         if(isVisible) {
             Canvas canvas = Canvas.getCanvas();
-            canvas.draw(this, color,
-                new java.awt.Rectangle(xPosition, yPosition, 
-                                       width, height));
+            canvas.draw(this, color,new java.awt.Rectangle(xPosition, yPosition, width, height));
             canvas.wait(10);
         }
     }
@@ -181,6 +176,37 @@ public class Rectangle{
             Canvas canvas = Canvas.getCanvas();
             canvas.erase(this);
         }
+    }
+    
+    private void updatePosition() {
+        if (isVisible) {
+            erase(); // Borra el rectángulo de su posición anterior
+            draw();  // Dibuja el rectángulo en la nueva posición
+        }
+    }
+    
+    public void setXPosition(int newX) {
+        xPosition = newX;
+        updatePosition(); // Actualiza gráficamente la posición
+    }
+
+    public void setYPosition(int newY) {
+        yPosition = newY;
+        updatePosition(); // Actualiza gráficamente la posición
+    }
+    
+    /**
+     * 
+     */
+    public int getXPosition() {
+        return xPosition;
+    }
+    
+    /**
+     * 
+     */
+    public int getYPosition() {
+        return yPosition;
     }
 }
 
