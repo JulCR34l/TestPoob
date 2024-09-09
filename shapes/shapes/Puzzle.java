@@ -1,7 +1,7 @@
 /**
  * Write a description of class Puzzle here.
  * 
- * @author Julian David Castiblanco Real y  
+ * @author Julian David Castiblanco Real y Nicole Dayan Calderón Arévalo 
  * @version (a version number or a date)
  */
 public class Puzzle
