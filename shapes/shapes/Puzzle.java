@@ -1,8 +1,8 @@
 /**
- * Write a description of class Puzzle here.
+ * Class Puzzle makes a game with a board and in this board creates pieces to move in all direction.
  * 
  * @author Julian David Castiblanco Real y Nicole Dayan Calderón Arévalo 
- * @version (a version number or a date)
+ * @version 2024
  */
 public class Puzzle
 {
@@ -42,7 +42,10 @@ public class Puzzle
         this.isVisible = false;
         initializeRectangles();
     }
-    
+    /**
+    * This method creates board
+    *
+    */
     private void initializeRectangles() {
         int rectHeight = 30; // Tamaño de cada rectángulo
         int rectWidth = 40;
@@ -58,8 +61,11 @@ public class Puzzle
             }
         }
     }
-    
-    public void addtile(int row, int column, String color)
+    /**
+    * This method adds pieces using matrix form and draw it
+    *
+    */
+    public void addTile(int row, int column, String color)
     {
         if (isPositionValid(row,column) && puzzle[row][column] == '\0')
         {   
@@ -73,7 +79,10 @@ public class Puzzle
             System.out.println("Posición ya usada o no valida");   
         }
     }
-    
+    /**
+    * This method converts string color to char
+    *
+    */
     private char convertColorToChar(String color)
     {
         switch(color.toLowerCase()){
@@ -89,7 +98,10 @@ public class Puzzle
                 return '\0';
         }
     }
-    
+    /**
+    * This method deletes pieces using matrix form and erase it
+    *
+    */
     public void deleteTile(int row, int column){
         if (isPositionValid(row, column) && puzzle[row][column] != '\0'){
             puzzle[row][column] = '\0';
@@ -99,7 +111,10 @@ public class Puzzle
             System.out.println("Posición no valida o vacía");  
         }
     }
-    
+    /**
+    * This method recolocates pieces
+    *
+    */
     public void relocateTile(int[] from, int[] to)
     {
         if (isPositionValid(from[0], from[1]) && isPositionValid(to[0], to[1]) && puzzle[from[0]][from[1]] != '\0' && 
@@ -116,7 +131,10 @@ public class Puzzle
     {
            
     }
-    
+    /**
+    * This method tilts the board to move the pieces in all directions
+    *
+    */
     public void tilt(char direction)
     {   
         switch (direction) {
@@ -136,7 +154,10 @@ public class Puzzle
                 System.out.println("Dirección no válida");
         }
     }
-    
+    /**
+    * This method moves up the puzzle
+    *
+    */
     private void moveUpPuzzle() {
     for (int col = 0; col < width; col++) {
         char[] newCol = new char[height];
@@ -165,7 +186,10 @@ public class Puzzle
         }
     }
     }
-    
+      /**
+    * This method moves down the puzzle
+    *
+    */
     private void moveDownPuzzle()
     {
         for (int col = 0; col < width; col++) {
@@ -195,7 +219,10 @@ public class Puzzle
         }
     }
     }
-    
+      /**
+    * This method moves right the puzzle
+    *
+    */
     private void moveRightPuzzle()
     {
     for (int row = 0; row < height; row++) {
@@ -225,7 +252,10 @@ public class Puzzle
     }
     }
 
-    
+      /**
+    * This method moves left the puzzle
+    *
+    */
     private void moveLeftPuzzle()
     {
     for (int row = 0; row < height; row++) {
@@ -257,10 +287,8 @@ public class Puzzle
 
     
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * This method makes visible all
+     *
      */
     public void makeVisible() {
         if (!isVisible) {
@@ -272,7 +300,10 @@ public class Puzzle
             isVisible = true;
         }
     }
-    
+      /**
+    * This method validates the position
+    *
+    */
     private boolean isPositionValid(int row, int column)
     {
         return row >= 0 && row < height && column >= 0 && column < width;    
