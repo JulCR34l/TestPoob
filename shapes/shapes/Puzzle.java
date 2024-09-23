@@ -4,8 +4,8 @@ import java.awt.Graphics;
  * A class representing a customizable puzzle game where users can place, remove, or move tiles
  * to reach a target arrangement.
  * 
- * @author Julian David Castiblanco Real y  
- * @version (a version number or a date)
+ * @author Julian David Castiblanco Real y Nicole Dayan Calderón Arévalo 
+ * @version 2024(2)
  */
 public class Puzzle {
     private int height;
