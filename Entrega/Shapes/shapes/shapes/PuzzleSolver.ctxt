@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PuzzleSolver
+comment1.params=starting\ ending
+comment1.target=boolean\ solve(char[][],\ char[][])
+comment2.params=starting\ ending
+comment2.target=void\ simulate(char[][],\ char[][])
+numComments=3
