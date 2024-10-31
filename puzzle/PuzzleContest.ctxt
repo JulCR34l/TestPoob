@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=PuzzleContest
+comment0.text=\r\n\ The\ PuzzleContest\ class\ is\ responsible\ for\ managing\ a\ puzzle\ game\ where\ users\r\n\ can\ attempt\ to\ solve\ a\ tilting\ tiles\ puzzle.\ It\ uses\ a\ Puzzle\ instance\ to\ represent\r\n\ the\ current\ state\ of\ the\ puzzle\ and\ a\ TiltingTilesSolver\ to\ determine\ if\ a\ solution\r\n\ exists\ and\ to\ simulate\ the\ solution\ process.\r\n
+comment1.params=startingBoard\ endingBoard
+comment1.target=boolean\ solve(char[][],\ char[][])
+comment1.text=\r\n\ Attempts\ to\ solve\ the\ puzzle\ using\ the\ given\ starting\ and\ ending\ board\ configurations.\r\n
+comment2.params=startingBoard\ endingBoard
+comment2.target=void\ simulate(char[][],\ char[][])
+comment2.text=\r\n\ Simulates\ the\ process\ of\ solving\ the\ puzzle\ by\ applying\ the\ necessary\ moves\r\nto\ transform\ the\ starting\ board\ into\ the\ ending\ board.
+numComments=3
